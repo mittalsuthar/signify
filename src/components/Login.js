@@ -8,8 +8,8 @@ import {
 const Login = ({ setUser }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [isSignup, setIsSignup] = useState(false); // Toggle between Login and Signup mode
-  const [error, setError] = useState(""); // To handle and display errors
+  const [isSignup, setIsSignup] = useState(false); 
+  const [error, setError] = useState(""); 
 
   const handleGoogleLogin = async () => {
     try {
@@ -27,10 +27,10 @@ const Login = ({ setUser }) => {
   };
 
   const handleEmailAuth = async () => {
-    setError(""); // Clear any previous errors
+    setError("");
     try {
       if (isSignup) {
-        // Sign up new user
+ 
         const result = await createUserWithEmailAndPassword(
           auth,
           email,
@@ -38,12 +38,12 @@ const Login = ({ setUser }) => {
         );
         setUser({ name: result.user.email, email: result.user.email });
       } else {
-        // Login existing user
+     
         const result = await signInWithEmailAndPassword(auth, email, password);
         setUser({ name: result.user.email, email: result.user.email });
       }
     } catch (err) {
-      // Display error messages
+   
       setError(err.message);
       console.error(err);
     }

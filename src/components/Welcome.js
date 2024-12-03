@@ -10,7 +10,7 @@ const Welcome = ({ user, handleLogout }) => {
           alt="User Avatar"
           className="w-24 h-24 rounded-full mx-auto mb-4"
         />
-        <p className="text-xl font-semibold text-gray-800">Name: {user.name}</p>
+     
         <p className="text-lg text-gray-600">Email: {user.email}</p>
         <button
           onClick={handleLogout}
